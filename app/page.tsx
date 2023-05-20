@@ -26,14 +26,14 @@ export default function Home() {
   });
 
   return (
-    <main className="min-h-screen flex justify-center ">
+    <main className="min-h-dscreen flex justify-center ">
       <div className="flex w-10/12">
-        <div className="flex flex-col justify-center xl:w-1/2 md:w-10/12 sm:w-full w-full">
-          <Atropos shadow={false} className="flex flex-col max-w-2xl">
+        <div className="flex flex-col justify-center xl:w-full">
+          <Atropos shadow={false} className="flex flex-col w-3/4">
             <h1
               className={
                 playfair.className +
-                " xl:text-9xl md:text-8xl sm:text-7xl text-6xl font-bold"
+                " xl:text-9xl md:text-8xl sm:text-7xl text-6xl font-bold mt-6"
               }
             >
               Agnibe
@@ -57,15 +57,21 @@ export default function Home() {
           </Atropos>
           <div className="mt-12"></div>
           <div className="max-w-2xl">
-            <p className="mt-4 xl:text-xl text-md text-stone-700">
+            <Atropos
+              shadow={false}
+              className="mt-4 xl:text-xl text-md text-stone-700"
+            >
               👋 Hi there! I&apos;m a senior software engineer at GlowRadius,
               passionate about building remarkable web applications, micro
               backends, and network security solutions. With a keen eye for
               detail and a drive for innovation, I strive to create seamless
               digital experiences that elevate businesses to new heights.
-            </p>
+            </Atropos>
 
-            <p className="mt-4 xl:text-xl text-md text-stone-700">
+            <Atropos
+              shadow={false}
+              className="mt-4 xl:text-xl text-md text-stone-700"
+            >
               When I&apos;m not immersed in code, you&apos;ll often find me
               exploring the world with my camera in hand, capturing breathtaking
               landscapes and documenting my travels. I believe that travel opens
@@ -73,13 +79,16 @@ export default function Home() {
               vibrant culinary traditions. Just as I enjoy savoring authentic
               dishes from around the globe, I find great joy in experimenting
               with flavors and creating delicious meals in my own kitchen. 🌍🍽️
-            </p>
+            </Atropos>
 
-            <p className="mt-4 xl:text-xl text-md text-stone-700">
+            <Atropos
+              shadow={false}
+              className="mt-4 xl:text-xl text-md text-stone-700"
+            >
               Welcome to my digital haven, where technology meets wanderlust,
               and where passion meets professionalism. Let&apos;s embark on a
               visual and technological adventure together. 🚀✨
-            </p>
+            </Atropos>
           </div>
           <div className="mt-12 h-8">
             <p className="text-xl">
