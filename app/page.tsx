@@ -29,7 +29,7 @@ export default function Home() {
     <main className="min-h-dscreen flex justify-center ">
       <div className="flex w-10/12">
         <div className="flex flex-col justify-center xl:w-full">
-          <Atropos shadow={false} className="flex flex-col w-3/4">
+          <Atropos shadow={false} className="flex flex-col xl:w-2/4 md:w-3/4 sm:w-full w-full">
             <h1
               className={
                 playfair.className +
