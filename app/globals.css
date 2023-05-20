@@ -4,8 +4,11 @@
 
 body {
   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100dvh;
 }
 
-.min-h-dscreen{
+.min-h-dscreen {
   min-height: 100dvh;
 }
