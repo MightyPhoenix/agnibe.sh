@@ -1,130 +1,112 @@
-"use client";
-import Atropos from "atropos/react";
-import { Playfair_Display } from "next/font/google";
-import { useSpring, animated } from "react-spring";
-import Link from "next/link";
-const playfair = Playfair_Display({ subsets: ["latin"] });
+import Image from "next/image";
 
 export default function Home() {
-  const bounceAnimation = useSpring({
-    from: { transform: "translateY(0px)" },
-    to: async (next) => {
-      while (true) {
-        const randomHeight = Math.floor(Math.random() * (20 - 10 + 1)) + 20; // Randomize bounce height between 10 and 75
-        await next({
-          transform: `translateY(-${randomHeight}px)`,
-          config: { tension: 300, friction: 20, duration: 500 },
-        });
-        await next({
-          transform: "translateY(0px)",
-          config: { tension: 300, friction: 20, duration: 300 },
-        });
-      }
-    },
-    config: { tension: 300, friction: 20, duration: 0 },
-  });
-
   return (
-    <main className="min-h-dscreen flex flex-col">
-      <div className="flex flex-grow justify-center w-full">
-        <div className="flex w-10/12 my-6">
-          <div className="flex flex-col justify-center xl:w-full">
-            <div className="mt-6">
-              <Atropos
-                shadow={false}
-                className="flex flex-col 2xl:2/4 xl:w-3/4 lg:3/4 md:w-3/4 sm:w-full w-full"
-              >
-                <h1
-                  className={
-                    playfair.className +
-                    " 2xl:text-9xl xl:text-8xl md:text-7xl sm:text-6xl text-6xl font-bold"
-                  }
-                >
-                  Agnibe
-                  <animated.span
-                    className="text-emerald-800 absolute"
-                    style={bounceAnimation}
-                  >
-                    .
-                  </animated.span>
-                  <span className="text-emerald-800 ml-4 xl:ml-8 md:ml-6 sm:ml-5">
-                    sh
-                  </span>
-                </h1>
-                <p
-                  className={
-                    playfair.className +
-                    " mt-8 xl:text-3xl md:text-2xl text-xl text-zinc-500"
-                  }
-                >
-                  Code. Capture. Inspire. ✨
-                </p>
-              </Atropos>
-              <div className="h-10"></div>
-              <div className="max-w-2xl xl:text-2xl md:text-xl text-lg xl:text-left md:text-left text-justify">
-                <p className="my-4 text-stone-700">
-                  👋 Hi there! I&apos;m a senior software engineer at
-                  GlowRadius, passionate about building remarkable web
-                  applications, micro backends, and network security solutions.
-                  With a keen eye for detail and a drive for innovation, I
-                  strive to create seamless digital experiences that elevate
-                  businesses to new heights.
-                </p>
-
-                <p className="my-4 text-stone-700">
-                  When I&apos;m not immersed in code, you&apos;ll often find me
-                  exploring the world with my camera in hand, capturing
-                  breathtaking landscapes and documenting my travels. I believe
-                  that travel opens our minds, allowing us to embrace diverse
-                  cultures and their vibrant culinary traditions. Just as I
-                  enjoy savoring authentic dishes from around the globe, I find
-                  great joy in experimenting with flavors and creating delicious
-                  meals in my own kitchen. 🌍🍽️
-                </p>
-
-                <p className="my-4 text-stone-700">
-                  Welcome to my digital haven, where technology meets
-                  wanderlust, and where passion meets professionalism.
-                  Let&apos;s embark on a visual and technological adventure
-                  together. 🚀✨
-                </p>
-              </div>
-              <div className="h-16"></div>
-              <div className="h-24">
-                <div>
-                  <p className="text-xl">
-                    📬 Reach out to me at{" "}
-                    <Link href="mailto:me@agnibesh.dev" className="border-b-2 cursor-pointer border-pink-300 hover:text-pink-300 border-dotted transition-all">
-                      me@agnibesh.dev
-                    </Link>
-                  </p>
-                </div>
-                <div className="h-6"></div>
-                <ul className="flex items-start gap-5">
-                  <li className="border-b-2 border-gray-600 hover:text-gray-600 hover:border-b-4 transition-all cursor-pointer">
-                    <Link href="https://github.com/MightyPhoenix">GitHub</Link>
-                  </li>
-                  <li className="border-b-2 border-blue-600 hover:text-blue-600 hover:border-b-4 transition-all cursor-pointer">
-                    <Link href="https://linkedin.com/in/mightyphoenix7">LinkedIn</Link>
-                  </li>
-                  <li className="border-b-2 border-cyan-600 hover:text-cyan-600 hover:border-b-4 transition-all cursor-pointer">
-                    <Link href="https://twitter.com/hsebinga">Twitter</Link>
-                  </li>
-                  <li className="border-b-2 border-fuchsia-600 hover:text-fuchsia-600 hover:border-b-4 transition-all cursor-pointer">
-                    <Link href="https://instagram.com/hsebinga">Instagram</Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="h-16"></div>
-            </div>
-          </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+          Get started by editing&nbsp;
+          <code className="font-mono font-bold">app/page.tsx</code>
+        </p>
+        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
+          <a
+            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            By{" "}
+            <Image
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className="dark:invert"
+              width={100}
+              height={24}
+              priority
+            />
+          </a>
         </div>
       </div>
-      <div className="w-full h-16 grid place-content-center text-center py-2 border-t border-amber-600">
-        <div className="text-gray-700">Made with love and ChatGpt</div>
-        <div className="text-gray-700">
-          &copy; Agnibe.sh {new Date().getFullYear()}
-        </div>
+
+      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+        <Image
+          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+          src="/next.svg"
+          alt="Next.js Logo"
+          width={180}
+          height={37}
+          priority
+        />
+      </div>
+
+      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+        <a
+          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Docs{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Find in-depth information about Next.js features and API.
+          </p>
+        </a>
+
+        <a
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Learn{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          </p>
+        </a>
+
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Templates{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Explore starter templates for Next.js.
+          </p>
+        </a>
+
+        <a
+          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Deploy{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
+            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          </p>
+        </a>
       </div>
     </main>
   );
